@@ -1,0 +1,9 @@
+pthreads	php72t-pecl-pthreads	0.0.0	0git20181006.vortex.el7.centos	php72t-devel	https://github.com/krakjoe/pthreads/archive/master.tar.gz
+event	php72t-pecl-event	2.4.1	1.vortex.el7.centos	libevent-devel,openssl-devel	https://pecl.php.net/get/event-2.4.1.tgz
+ssh2	php72t-pecl-ssh2	1.1.2	1.vortex.el7.centos	libssh2-devel	https://pecl.php.net/get/ssh2-1.1.2.tgz
+mcrypt	php72t-pecl-mcrypt	1.0.1	1.vortex.el7.centos	libmcrypt-devel	https://pecl.php.net/get/mcrypt-1.0.1.tgz
+amqp	php72t-pecl-amqp	1.9.3	1.vortex.el7.centos	librabbitmq-devel	https://pecl.php.net/get/amqp-1.9.3.tgz
+fann	php72t-pecl-fann	1.1.1	1.vortex.el7.centos	fann-devel	https://pecl.php.net/get/fann-1.1.1.tgz
+apcu	php72t-pecl-apcu	5.1.12	1.vortex.el7.centos	php72t-devel	https://pecl.php.net/get/apcu-5.1.12.tgz
+gender	php72t-pecl-gender	1.1.0	1.vortex.el7.centos	php72t-devel	https://pecl.php.net/get/gender-1.1.0.tgz
+redis	php72t-pecl-redis	4.1.1	1.vortex.el7.centos	php72t-devel	https://pecl.php.net/get/redis-4.1.1.tgz
