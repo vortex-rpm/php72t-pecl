@@ -1,3 +1,4 @@
+opengl	php72t-pecl-opengl	0.9.0	1.vortex.el7.centos	mesa-libGL-devel	https://pecl.php.net/get/opengl-0.9.0.tgz
 sdl	php72t-pecl-sdl		2.1.0	1.vortex.el7.centos	SDL2-devel	https://pecl.php.net/get/sdl-2.1.0.tgz
 pthreads	php72t-pecl-pthreads	0.0.0	0git20181006.vortex.el7.centos	php72t-devel	https://github.com/krakjoe/pthreads/archive/master.tar.gz
 event	php72t-pecl-event	2.4.1	1.vortex.el7.centos	libevent-devel,openssl-devel	https://pecl.php.net/get/event-2.4.1.tgz
