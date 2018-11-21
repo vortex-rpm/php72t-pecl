@@ -26,6 +26,6 @@ RUN yum install -y $(echo ${DEPS} | sed 's/,/ /g')
 RUN cd $(find . -type d -maxdepth 1 ! -path .) && phpize && ./configure --prefix=/${BUILDROOT} && make && make install INSTALL_ROOT=${BUILDROOT}
 RUN mkdir -p ${BUILDROOT}/${XML_DIR}
 RUN sh -c 'if [ -e package.xml ] ; then cp package.xml ${BUILDROOT}/${XML_DIR}/${PECL_NAME}.xml ; fi'
-RUN mkdir -p ${BUILDROOT}/${CONFIG_DIR} && echo "extension=${PECL_NAME}.so" > ${BUILDROOT}/${CONFIG_DIR}/${PECL_NAME}.ini
+RUN sh -c 'if [ ${PECL_NAME} != "pthreads" ] ; then mkdir -p ${BUILDROOT}/${CONFIG_DIR} && echo "extension=${PECL_NAME}.so" > ${BUILDROOT}/${CONFIG_DIR}/${PECL_NAME}.ini ; fi'
 
-RUN cd ${BUILDROOT} && fpm -s dir -t rpm --rpm-autoreqprov --rpm-autoreq --rpm-autoprov -d php72t-cli --license "ASL 2.0" --vendor "Vortex RPM" -m "Vortex Maintainers <dev@vortex-rpm.org>" --url "http://vortex-rpm.org" -n ${NAME} -v ${VERSION} --iteration "${ITERATION}" --config-files ${CONFIG_DIR}/${PECL_NAME}.ini usr var
+RUN sh -c 'if [ ${PECL_NAME} != "pthreads" ] ; then cd ${BUILDROOT} && fpm -s dir -t rpm --rpm-autoreqprov --rpm-autoreq --rpm-autoprov -d php72t-cli --license "ASL 2.0" --vendor "Vortex RPM" -m "Vortex Maintainers <dev@vortex-rpm.org>" --url "http://vortex-rpm.org" -n ${NAME} -v ${VERSION} --iteration "${ITERATION}" --config-files ${CONFIG_DIR}/${PECL_NAME}.ini usr var ; else cd ${BUILDROOT} && fpm -s dir -t rpm --rpm-autoreqprov --rpm-autoreq --rpm-autoprov -d php72t-cli --license "ASL 2.0" --vendor "Vortex RPM" -m "Vortex Maintainers <dev@vortex-rpm.org>" --url "http://vortex-rpm.org" -n ${NAME} -v ${VERSION} --iteration "${ITERATION}" usr var ; fi'
